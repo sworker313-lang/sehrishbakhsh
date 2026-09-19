@@ -1,0 +1,365 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+/* GENERAL SCENE */
+
+.scene{
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:40px 20px;
+    position:relative;
+}
+
+/* INTRO */
+
+#intro{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.75)
+    ),
+    url("photo1.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.center{
+    max-width:900px;
+}
+
+.center h1{
+    font-size:4rem;
+    font-family:'Cinzel',serif;
+    color:#ffd700;
+    margin-bottom:20px;
+}
+
+.center h2{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.center p{
+    font-size:1.3rem;
+    color:#ddd;
+}
+
+.center button{
+    margin-top:40px;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:600;
+    background:#e50914;
+    color:white;
+    transition:.4s;
+}
+
+.center button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px #e50914;
+}
+
+/* MOVIE TITLE */
+
+.movie-title{
+    animation:fadeUp 2s ease;
+}
+
+.movie-title p{
+    color:#bbb;
+    letter-spacing:4px;
+    margin:10px 0;
+}
+
+.movie-title h1{
+    font-size:4rem;
+    font-family:'Cinzel',serif;
+}
+
+.movie-title h2{
+    margin-top:20px;
+    font-size:2rem;
+}
+
+.gold{
+    color:#ffd700;
+    text-shadow:0 0 20px #ffd700;
+}
+
+/* BIRTHDAY */
+
+.birthday h1{
+    font-size:5rem;
+    color:#ffd700;
+    font-family:'Cinzel',serif;
+}
+
+.birthday h2{
+    margin-top:20px;
+    font-size:2rem;
+    color:#fff;
+}
+
+/* PHOTO SCENES */
+
+.photo-scene{
+    background:#000;
+}
+
+.photo-scene img{
+    width:90%;
+    max-width:500px;
+    border-radius:25px;
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.15);
+
+    animation:zoomSlow 10s linear infinite;
+}
+
+.caption{
+    margin-top:30px;
+    color:#ffd700;
+    font-size:1.2rem;
+}
+
+.caption h2{
+    margin-top:10px;
+    color:#fff;
+}
+
+/* LETTER */
+
+.letter{
+    max-width:900px;
+    width:95%;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    padding:40px;
+
+    border-radius:30px;
+
+    border:1px solid
+    rgba(255,255,255,.15);
+}
+
+.letter h1{
+    color:#ffd700;
+    margin-bottom:30px;
+    font-family:'Cinzel',serif;
+}
+
+#typewriter{
+    line-height:2;
+    color:#eee;
+    text-align:left;
+    white-space:pre-line;
+}
+
+/* FINAL */
+
+.final{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.8),
+        rgba(0,0,0,.8)
+    ),
+    url("couple.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.final h1{
+    font-size:5rem;
+    color:#ff2d55;
+    margin-top:30px;
+
+    text-shadow:
+    0 0 20px #ff2d55;
+}
+
+.final h2{
+    margin-top:20px;
+    color:#ffd700;
+}
+
+.final p{
+    margin-top:15px;
+    font-size:1.2rem;
+}
+
+.couple{
+    width:320px;
+    max-width:90%;
+    border-radius:30px;
+
+    border:5px solid white;
+
+    box-shadow:
+    0 0 35px rgba(255,255,255,.4);
+}
+
+/* ANIMATIONS */
+
+@keyframes zoomSlow{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* CINEMA GLOW */
+
+.scene::before{
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(
+        circle,
+        transparent 60%,
+        rgba(0,0,0,.45)
+    );
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .center h1{
+        font-size:2.3rem;
+    }
+
+    .center h2{
+        font-size:1.3rem;
+    }
+
+    .movie-title h1{
+        font-size:2.3rem;
+    }
+
+    .birthday h1{
+        font-size:3rem;
+    }
+
+    .birthday h2{
+        font-size:1.3rem;
+    }
+
+    .final h1{
+        font-size:2.7rem;
+    }
+
+    .letter{
+        padding:25px;
+    }
+
+}
+/* COUNTDOWN + NEXT BUTTON */
+
+.countdown-box{
+    margin-top:30px;
+    text-align:center;
+    z-index:999;
+}
+
+.countdown-box h2{
+    font-size:60px;
+    color:#ffd700;
+    text-shadow:0 0 20px #ffd700;
+    margin-bottom:15px;
+}
+
+.countdown-box button{
+    padding:14px 35px;
+    border:none;
+    border-radius:50px;
+    background:#ff2d55;
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.countdown-box button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px #ff2d55;
+}
+
+.countdown-box button:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+    box-shadow:none;
+}
+
+@media(max-width:768px){
+
+    .countdown-box h2{
+        font-size:45px;
+    }
+
+    .countdown-box button{
+        font-size:16px;
+        padding:12px 28px;
+    }
+
+}
